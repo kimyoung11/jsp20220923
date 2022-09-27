@@ -24,5 +24,8 @@
 		<li>Inventore tempore.</li>
 		<li>Eum veniam!</li>
 	</ul>
+	클라IP = <%= request.getRemoteAddr() %>
+	<%= "\n" %>
+	길이 = <%= request.getContentLength() %>
 </body>
 </html>
