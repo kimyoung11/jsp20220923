@@ -23,4 +23,8 @@ public class Car {
 	public void setPrice(Integer price) {
 		this.price = price;
 	}
+	
+	public String getCompany() {
+		return "현대";
+	}
 }
