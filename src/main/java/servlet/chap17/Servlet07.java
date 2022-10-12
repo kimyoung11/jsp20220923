@@ -1,8 +1,9 @@
 package servlet.chap17;
 
 import java.io.IOException;
+import java.util.Enumeration;
+
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -29,6 +30,13 @@ public class Servlet07 extends HttpServlet {
 		System.out.println("this is ip : "+ getInitParameter("ip"));
 		System.out.println("this is pwd : "+ getInitParameter("pwd"));
 		System.out.println("this is userName : " + getInitParameter("userName"));
+		Enumeration<String> e = getInitParameterNames();
+		
+		String str = "";
+		while(e.hasMoreElements()) {
+			str=e.nextElement();
+			System.out.println(str);
+		}
 	}
 
 	/**

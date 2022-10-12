@@ -12,6 +12,31 @@
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
+	
+	<!--  ServletCOntextListener 설정 -->
+	<listener>
+		<listener-class>listener.chap20.ServletContextListener01</listener-class>
+	</listener>
+	
+	<listener>
+		<listener-class>listener.chap20.ServletContextListener02</listener-class>
+	</listener>
+	
+	<listener>
+		<listener-class>listener.chap20.ServletContextListener03</listener-class>
+	</listener>
+	
+	<!-- 초기화 파라미터 설정 : 어플리케이션 실행시 필요한 정보 작성(application) -->
+	<context-param>
+		<param-name>init-param1</param-name>
+		<param-value>init-value1</param-value>
+	</context-param>
+	
+	<context-param>
+		<param-name>init-param2</param-name>
+		<param-value>init-value2</param-value>
+	</context-param>
+	
 	<session-config>
 		<session-timeout>60</session-timeout>
 	</session-config>
@@ -40,12 +65,28 @@
 			<param-name>userName</param-name>
 			<param-value>KIM</param-value>
 		</init-param>
+		<init-param>
+			<param-name>userName</param-name>
+			<param-value>LEE</param-value>
+		</init-param>
 	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>servlet07</servlet-name>
 		<url-pattern>/servlet7</url-pattern>
 	</servlet-mapping>
+	
+	<!--  필터 설정 -->
+	<filter>
+		<filter-name>filter02</filter-name>
+		<filter-class>filter.chap19.Filter02</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>filter02</filter-name>
+		<url-pattern>/Servlet10</url-pattern>
+		<url-pattern>/Servlet09</url-pattern>
+	</filter-mapping>
 
-
+	
 </web-app>
